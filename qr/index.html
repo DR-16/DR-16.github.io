@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>扫码看全部项目 — YAO Design Lab</title>
+<meta name="robots" content="noindex" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--accent:#ff6a2b;--accent-2:#ffb03a}
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;background:#08080c;color:#f2f2f5;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:min(5vh,40px);padding:5vh 24px;text-align:center;overflow:hidden;
+  }
+  .glow{position:fixed;border-radius:50%;filter:blur(110px);pointer-events:none;opacity:.45}
+  .g1{top:-15vh;left:-10vw;width:48vh;height:48vh;background:radial-gradient(circle,rgba(255,106,43,.35),transparent 70%)}
+  .g2{bottom:-18vh;right:-12vw;width:52vh;height:52vh;background:radial-gradient(circle,rgba(90,120,255,.22),transparent 70%)}
+  .eyebrow{
+    position:relative;font-family:'JetBrains Mono',monospace;
+    font-size:clamp(10px,1.5vh,13px);letter-spacing:.3em;text-transform:uppercase;
+    color:var(--accent);margin:0;
+  }
+  h1{
+    position:relative;margin:0;font-size:clamp(22px,4.6vh,42px);font-weight:600;letter-spacing:-.02em;line-height:1.2;
+  }
+  h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .card{
+    position:relative;background:#fff;border-radius:min(3vh,28px);
+    padding:min(3.4vh,30px);line-height:0;
+    box-shadow:0 0 0 1px rgba(255,255,255,.1),0 30px 80px rgba(0,0,0,.6),0 0 120px rgba(255,106,43,.14);
+  }
+  .card img{width:min(46vh,78vw);height:auto;display:block;image-rendering:pixelated}
+  .url{
+    position:relative;font-family:'JetBrains Mono',monospace;
+    font-size:clamp(15px,3.1vh,30px);font-weight:500;letter-spacing:.01em;margin:0;
+  }
+  .hint{
+    position:relative;margin:0;font-size:clamp(12px,1.9vh,16px);font-weight:300;color:#9a9aa8;
+  }
+  @media (orientation:portrait){ body{gap:min(4vh,28px)} }
+  @media print{
+    body{background:#fff;color:#000;height:auto}
+    .glow{display:none}
+    .card{box-shadow:none;border:1px solid #ddd}
+    .url,.hint,h1{color:#000}
+    .eyebrow{color:#666}
+  }
+</style>
+</head>
+<body>
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+
+<p class="eyebrow">YAO Design Lab</p>
+<h1>扫一下，<em>13 个项目</em>全在里面</h1>
+
+<div class="card">
+  <img src="qr-light.png" alt="二维码，指向 https://dr-16.github.io/" width="1480" height="1480" />
+</div>
+
+<p class="url">dr-16.github.io</p>
+<p class="hint">用相机对着扫就行 · 手机直接打开，不用下载任何东西</p>
+</body>
+</html>
