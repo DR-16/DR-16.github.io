@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>YAO Design Lab — 项目索引</title>
-<meta name="description" content="Daniel 的全部项目与网站索引 · All projects and sites in one place." />
-<meta name="theme-color" content="#0a0a0f" />
+<title>YAO Design Lab — Projects</title>
+<meta name="description" content="All projects and sites in one place." />
+<meta name="theme-color" content="#08080c" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,6 @@
 <style>
   :root{
     --bg:#08080c;
-    --bg-2:#0e0e15;
     --card:rgba(255,255,255,.035);
     --card-hover:rgba(255,255,255,.065);
     --line:rgba(255,255,255,.09);
@@ -22,57 +21,24 @@
     --fg-dim:#9a9aa8;
     --fg-faint:#6a6a78;
     --accent:#ff6a2b;
-    --accent-2:#ffb03a;
     --radius:16px;
     --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--fg);
+    margin:0;background:var(--bg);color:var(--fg);
     font-family:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    font-weight:400;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
-  /* ambient */
-  .glow{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;opacity:.5}
-  .glow-a{top:-180px;left:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(255,106,43,.28),transparent 70%)}
-  .glow-b{bottom:-200px;right:-140px;width:460px;height:460px;background:radial-gradient(circle,rgba(90,120,255,.20),transparent 70%)}
-  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.25;
+  .glow{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;opacity:.45}
+  .glow-a{top:-180px;left:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(255,106,43,.26),transparent 70%)}
+  .glow-b{bottom:-200px;right:-140px;width:460px;height:460px;background:radial-gradient(circle,rgba(90,120,255,.18),transparent 70%)}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.22;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");}
 
-  .wrap{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 20px 80px}
+  .wrap{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:56px 20px 72px}
 
-  /* header */
-  header{padding:64px 0 36px}
-  .eyebrow{
-    font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent);margin:0 0 14px;
-  }
-  h1{
-    margin:0 0 10px;font-size:clamp(32px,8vw,52px);line-height:1.08;
-    font-weight:600;letter-spacing:-.025em;
-  }
-  h1 .flame{
-    background:linear-gradient(100deg,var(--accent),var(--accent-2));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .tagline{margin:0;color:var(--fg-dim);font-size:clamp(14px,3.6vw,16px);max-width:46ch;font-weight:300}
-  .meta{
-    margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px;
-  }
-  .meta a,.meta span{
-    font-family:var(--mono);font-size:11px;color:var(--fg-dim);
-    border:1px solid var(--line);border-radius:999px;padding:5px 11px;
-    text-decoration:none;transition:.2s;
-  }
-  .meta a:hover{color:var(--fg);border-color:var(--line-strong);background:var(--card)}
-
-  /* lang toggle */
   .lang-toggle{
     position:fixed;top:16px;right:16px;z-index:10;
     font-family:var(--mono);font-size:11px;letter-spacing:.08em;
@@ -82,14 +48,18 @@
   }
   .lang-toggle:hover{color:var(--fg);border-color:var(--line-strong)}
 
-  /* sections */
-  section{margin-top:42px}
+  section{margin-top:40px}
+  section:first-of-type{margin-top:0}
   .sec-head{
     display:flex;align-items:baseline;gap:12px;
     padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid var(--line);
   }
-  .sec-head h2{margin:0;font-size:15px;font-weight:500;letter-spacing:.01em}
-  .sec-head .count{font-family:var(--mono);font-size:11px;color:var(--fg-faint)}
+  .sec-head h2{
+    margin:0;font-size:12px;font-weight:500;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+    font-family:var(--mono);
+  }
+  .sec-head .count{font-family:var(--mono);font-size:11px;color:var(--fg-faint);margin-left:auto}
 
   .grid{display:grid;gap:12px}
   @media(min-width:680px){.grid{grid-template-columns:1fr 1fr}}
@@ -121,18 +91,18 @@
   }
   .tag.live{color:#6ee7a8;border-color:rgba(110,231,168,.28)}
   .tag.code{color:#8fb4ff;border-color:rgba(143,180,255,.28)}
+  .tag.store{color:#ffb03a;border-color:rgba(255,176,58,.3)}
 
   footer{
-    margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
-    font-size:12px;color:var(--fg-faint);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;
+    margin-top:52px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:11px;color:var(--fg-faint);
+    display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;
   }
-  footer a{color:var(--fg-dim);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a{color:var(--fg-faint);text-decoration:none;border-bottom:1px solid var(--line)}
   footer a:hover{color:var(--fg)}
-  .mono{font-family:var(--mono)}
 
   [data-lang="zh"] [data-only="en"]{display:none}
   [data-lang="en"] [data-only="zh"]{display:none}
-
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -145,115 +115,43 @@
 
 <div class="wrap">
 
-<header>
-  <p class="eyebrow">YAO Design Lab</p>
-  <h1><span data-only="zh">我做过的<span class="flame">每一个东西</span></span><span data-only="en">Everything <span class="flame">I've built</span></span></h1>
-  <p class="tagline">
-    <span data-only="zh">Daniel · 高中生 · 做产品、写代码、搞设计。下面每一项都可以直接打开。</span>
-    <span data-only="en">Daniel · high-school builder. Products, code, design. Every item below opens right away.</span>
-  </p>
-  <div class="meta">
-    <a href="https://github.com/DR-16" target="_blank" rel="noopener">github.com/DR-16</a>
-    <a href="https://dr-16.github.io/yao-design-lab/" target="_blank" rel="noopener"><span data-only="zh">作品集门户</span><span data-only="en">Portfolio</span></a>
-    <span class="mono" id="stamp">2026</span>
-  </div>
-</header>
-
 <section>
   <div class="sec-head">
-    <h2><span data-only="zh">产品与工具</span><span data-only="en">Products &amp; Tools</span></h2>
-    <span class="count mono">05</span>
+    <h2>AI &amp; Technology</h2>
+    <span class="count">03</span>
   </div>
   <div class="grid">
 
     <a class="card" href="https://dr-16.github.io/stock-agent-demo/" target="_blank" rel="noopener">
-      <div class="card-top"><h3>Stock Research Workbench</h3><span class="arrow">↗</span></div>
+      <div class="card-top"><h3>Stock Agent Demo</h3><span class="arrow">↗</span></div>
       <p><span data-only="zh">股票研究工作台。七个分析专家在你的浏览器里直接跑完，不上传任何数据。演示用合成数据，不构成投资建议。</span><span data-only="en">A stock research workbench. Seven analysis experts run entirely in your browser, nothing uploaded. Synthetic demo data; not investment advice.</span></p>
       <div class="tags"><span class="tag live">LIVE</span><span class="tag">JavaScript</span><span class="tag">In-browser</span></div>
     </a>
 
     <a class="card" href="https://github.com/DR-16/ai-girlfriend" target="_blank" rel="noopener">
-      <div class="card-top"><h3>AI Girlfriend</h3><span class="arrow">↗</span></div>
+      <div class="card-top"><h3>AI Companion</h3><span class="arrow">↗</span></div>
       <p><span data-only="zh">100% 本地运行的 AI 陪伴应用：三层记忆、动态情绪引擎、句子级流式输出、消息打断、关系阶段进化。</span><span data-only="en">A fully local AI companion app: three-layer memory, dynamic emotion engine, sentence-level streaming, interruptible replies, evolving relationship stages.</span></p>
       <div class="tags"><span class="tag code">SOURCE</span><span class="tag">TypeScript</span><span class="tag">Local-only</span></div>
     </a>
 
-    <a class="card" href="https://dr-16.github.io/gesture-particles/" target="_blank" rel="noopener">
-      <div class="card-top"><h3>Gesture Particles</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">用手势推动的粒子艺术。MediaPipe 做手部追踪，Three.js 渲染，全程在浏览器本地跑，摄像头画面不外传。</span><span data-only="en">Particle art driven by your hands. MediaPipe tracking plus Three.js rendering, all in-browser — the camera feed never leaves your device.</span></p>
-      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Three.js</span><span class="tag">MediaPipe</span></div>
-    </a>
-
-    <a class="card" href="https://github.com/DR-16/car-compare" target="_blank" rel="noopener">
-      <div class="card-top"><h3>Car Compare</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">输入两款车，输出结构化参数对照表：动力、油耗、尺寸、各版本价格。Flask 后端接大模型生成。</span><span data-only="en">Name two cars, get a structured spec table: power, economy, dimensions, per-trim pricing. Flask backend with an LLM behind it.</span></p>
-      <div class="tags"><span class="tag code">SOURCE</span><span class="tag">Python</span><span class="tag">Flask</span></div>
-    </a>
-
-    <a class="card" href="https://dr-16.github.io/wrongformula-legal/" target="_blank" rel="noopener">
-      <div class="card-top"><h3>The Wrong Formula</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">一个 iOS 应用。这里是它的隐私政策与使用条款页。</span><span data-only="en">An iOS app. This link is its privacy policy and terms of use.</span></p>
-      <div class="tags"><span class="tag live">LIVE</span><span class="tag">iOS</span><span class="tag">Legal</span></div>
-    </a>
-
-  </div>
-</section>
-
-<section>
-  <div class="sec-head">
-    <h2><span data-only="zh">设计与品牌</span><span data-only="en">Design &amp; Brand</span></h2>
-    <span class="count mono">04</span>
-  </div>
-  <div class="grid">
-
-    <a class="card" href="https://dr-16.github.io/yaoflame/" target="_blank" rel="noopener">
-      <div class="card-top"><h3>YAO FLAME</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">青少年主导的羽毛球设计项目。滚动驱动的 3D 网站，球拍随页面转动展开。</span><span data-only="en">A youth-led badminton design project. A scroll-driven 3D site where the racket turns and unfolds as you move down the page.</span></p>
-      <div class="tags"><span class="tag live">LIVE</span><span class="tag">3D</span><span class="tag">Scroll-driven</span></div>
-    </a>
-
-    <a class="card" href="https://dr-16.github.io/yao-design-lab/" target="_blank" rel="noopener">
-      <div class="card-top"><h3>YAO Design Lab</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">我的创意实验室门户：旋转的铬管、液态金属火焰、视差条纹。所有项目都挂在这个名字下面。</span><span data-only="en">My creative lab's front door: a rotating chrome cylinder, a liquid-metal flame, parallax stripes. Everything I make lives under this name.</span></p>
-      <div class="tags"><span class="tag live">LIVE</span><span class="tag">WebGL</span><span class="tag">Portfolio</span></div>
-    </a>
-
-    <a class="card" href="https://dr-16.github.io/whiskey-on-vinyl/" target="_blank" rel="noopener">
-      <div class="card-top"><h3><span data-only="zh">黑胶上的威士忌</span><span data-only="en">Whiskey on Vinyl</span></h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">深夜清吧的品牌站，六段场景滚下来，中英双语。做的是一间"可以安静坐着听歌"的空间。</span><span data-only="en">The brand site for a late-night listening room — six scenes, bilingual, built around a space where you just sit and listen.</span></p>
-      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Bilingual</span><span class="tag">Brand</span></div>
-    </a>
-
-    <a class="card" href="https://dr-16.github.io/still-site/" target="_blank" rel="noopener">
-      <div class="card-top"><h3>STILL</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">静奢风格的 T 恤品牌，连品牌定位带网站一起做。BC 市场营销 11 的期末项目。</span><span data-only="en">A quiet-luxury t-shirt brand — positioning and site built together. Final project for BC Marketing 11.</span></p>
-      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Branding</span><span class="tag">School</span></div>
-    </a>
-
-  </div>
-</section>
-
-<section>
-  <div class="sec-head">
-    <h2><span data-only="zh">课程与研究</span><span data-only="en">Coursework &amp; Research</span></h2>
-    <span class="count mono">04</span>
-  </div>
-  <div class="grid">
-
     <a class="card" href="https://dr-16.github.io/ai-revolution-game/" target="_blank" rel="noopener">
       <div class="card-top"><h3>AI Revolution</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">可交互的经济模拟：AI 在加拿大创造的机会，够不够抵消它取代的岗位？经济 12 期末项目。</span><span data-only="en">An interactive economic simulation: are AI's opportunities in Canada enough to offset the jobs it replaces? Final project for Economics 12.</span></p>
+      <p><span data-only="zh">可交互的经济模拟：AI 在加拿大创造的机会，够不够抵消它取代的岗位？</span><span data-only="en">An interactive economic simulation: are AI's opportunities in Canada enough to offset the jobs it replaces?</span></p>
       <div class="tags"><span class="tag live">LIVE</span><span class="tag">Simulation</span><span class="tag">Economics</span></div>
     </a>
 
-    <a class="card" href="https://dr-16.github.io/lessons-in-chemistry-game/" target="_blank" rel="noopener">
-      <div class="card-top"><h3>Lessons in Chemistry</h3><span class="arrow">↗</span></div>
-      <p><span data-only="zh">根据 Bonnie Garmus 同名小说改编的像素风选择式游戏，在浏览器里玩。</span><span data-only="en">A pixel-art choice game in the browser, adapted from Bonnie Garmus's novel.</span></p>
-      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Game</span><span class="tag">Pixel art</span></div>
-    </a>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Education</h2>
+    <span class="count">03</span>
+  </div>
+  <div class="grid">
 
     <a class="card" href="https://dr-16.github.io/sunflower-seeds/" target="_blank" rel="noopener">
-      <div class="card-top"><h3><span data-only="zh">葵花籽</span><span data-only="en">Sunflower Seeds</span></h3><span class="arrow">↗</span></div>
+      <div class="card-top"><h3>Sunflower Seeds</h3><span class="arrow">↗</span></div>
       <p><span data-only="zh">艾未未《葵花籽》的四层解读：从一颗瓷籽读到个体与群体的关系。</span><span data-only="en">A four-layer reading of Ai Weiwei's <em>Sunflower Seeds</em> — from a single porcelain seed to the individual inside the crowd.</span></p>
       <div class="tags"><span class="tag live">LIVE</span><span class="tag">Art</span><span class="tag">Essay</span></div>
     </a>
@@ -264,14 +162,91 @@
       <div class="tags"><span class="tag live">LIVE</span><span class="tag">Research</span><span class="tag">Social justice</span></div>
     </a>
 
+    <a class="card" href="https://dr-16.github.io/lessons-in-chemistry-game/" target="_blank" rel="noopener">
+      <div class="card-top"><h3>Lessons in Chemistry</h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">根据 Bonnie Garmus 同名小说改编的像素风选择式游戏，在浏览器里玩。</span><span data-only="en">A pixel-art choice game in the browser, adapted from Bonnie Garmus's novel.</span></p>
+      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Game</span><span class="tag">Pixel art</span></div>
+    </a>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Creative Design</h2>
+    <span class="count">03</span>
+  </div>
+  <div class="grid">
+
+    <a class="card" href="https://dr-16.github.io/yaoflame/" target="_blank" rel="noopener">
+      <div class="card-top"><h3>YAO FLAME</h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">青少年主导的羽毛球设计项目。滚动驱动的 3D 网站，球拍随页面转动展开。</span><span data-only="en">A youth-led badminton design project. A scroll-driven 3D site where the racket turns and unfolds as you move down the page.</span></p>
+      <div class="tags"><span class="tag live">LIVE</span><span class="tag">3D</span><span class="tag">Scroll-driven</span></div>
+    </a>
+
+    <a class="card" href="https://dr-16.github.io/whiskey-on-vinyl/" target="_blank" rel="noopener">
+      <div class="card-top"><h3><span data-only="zh">黑胶上的威士忌</span><span data-only="en">Whiskey on Vinyl</span></h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">深夜清吧的品牌站，六段场景滚下来，中英双语。做的是一间"可以安静坐着听歌"的空间。</span><span data-only="en">The brand site for a late-night listening room — six scenes, bilingual, built around a space where you just sit and listen.</span></p>
+      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Bilingual</span><span class="tag">Brand</span></div>
+    </a>
+
+    <a class="card" href="https://dr-16.github.io/still-site/" target="_blank" rel="noopener">
+      <div class="card-top"><h3>STILL</h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">静奢风格的 T 恤品牌，连品牌定位带网站一起做。</span><span data-only="en">A quiet-luxury t-shirt brand — positioning and site built together.</span></p>
+      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Branding</span><span class="tag">Identity</span></div>
+    </a>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Interactive Technology</h2>
+    <span class="count">02</span>
+  </div>
+  <div class="grid">
+
+    <a class="card" href="https://dr-16.github.io/gesture-particles/" target="_blank" rel="noopener">
+      <div class="card-top"><h3>Gesture Particles</h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">用手势推动的粒子艺术。MediaPipe 做手部追踪，Three.js 渲染，摄像头画面不外传。</span><span data-only="en">Particle art driven by your hands. MediaPipe tracking plus Three.js rendering — the camera feed never leaves your device.</span></p>
+      <div class="tags"><span class="tag live">LIVE</span><span class="tag">Three.js</span><span class="tag">MediaPipe</span></div>
+    </a>
+
+    <a class="card" href="https://github.com/DR-16/car-compare" target="_blank" rel="noopener">
+      <div class="card-top"><h3>Car Compare</h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">输入两款车，输出结构化参数对照表：动力、油耗、尺寸、各版本价格。</span><span data-only="en">Name two cars, get a structured spec table: power, economy, dimensions, per-trim pricing.</span></p>
+      <div class="tags"><span class="tag code">SOURCE</span><span class="tag">Python</span><span class="tag">Flask</span></div>
+    </a>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Studio &amp; Software</h2>
+    <span class="count">02</span>
+  </div>
+  <div class="grid">
+
+    <a class="card" href="https://dr-16.github.io/yao-design-lab/" target="_blank" rel="noopener">
+      <div class="card-top"><h3>YAO Design Lab</h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">创意实验室门户：旋转的铬管、液态金属火焰、视差条纹。所有项目都挂在这个名字下面。</span><span data-only="en">The studio's front door: a rotating chrome cylinder, a liquid-metal flame, parallax stripes. Everything here lives under this name.</span></p>
+      <div class="tags"><span class="tag live">LIVE</span><span class="tag">WebGL</span><span class="tag">Studio</span></div>
+    </a>
+
+    <a class="card" href="https://apps.apple.com/app/id6816597749" target="_blank" rel="noopener">
+      <div class="card-top"><h3>The Wrong Formula</h3><span class="arrow">↗</span></div>
+      <p><span data-only="zh">粉笔手绘风格的物理游戏：把公式碎片拖进槽里，选对了小人顺着斜坡滑下去，选错了整个宇宙当场崩塌。App Store 可下载。</span><span data-only="en">A chalk-drawn physics game: drag formula fragments into the slot. Get it right and the stickman slides cleanly; get it wrong and the universe collapses. On the App Store.</span></p>
+      <div class="tags"><span class="tag store">APP STORE</span><span class="tag">iOS</span><span class="tag">Game</span></div>
+    </a>
+
   </div>
 </section>
 
 <footer>
-  <span data-only="zh">13 个项目 · 12 个可以直接打开</span>
-  <span data-only="en">13 projects · 12 open instantly</span>
-  <a href="https://github.com/DR-16" target="_blank" rel="noopener">GitHub</a>
-  <span class="mono">dr-16.github.io</span>
+  <span>13 projects</span>
+  <a href="https://github.com/DR-16" target="_blank" rel="noopener">github.com/DR-16</a>
+  <span>dr-16.github.io</span>
 </footer>
 
 </div>
@@ -292,7 +267,6 @@
     var saved = localStorage.getItem('yao-lang');
     if (saved === 'en' || saved === 'zh') setLang(saved);
   } catch(e){}
-  document.getElementById('stamp').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
